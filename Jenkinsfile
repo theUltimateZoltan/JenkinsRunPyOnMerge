@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        github(event: 'pull_request', action: 'open') {
-            gitHubBranchSource(repoOwner: 'theUltimateZoltan', repoName: 'JenkinsRunPyOnMerge')
-        }
+        githubPullRequest { cron('H/5 * * * *') }
     }
 
     stages {

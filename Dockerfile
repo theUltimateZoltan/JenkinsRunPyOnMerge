@@ -8,7 +8,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install the Git plugin using the Jenkins-plugin-cli tool
-RUN jenkins-plugin-cli --plugins git github-branch-source workflow-aggregator
+RUN jenkins-plugin-cli --plugins git workflow-aggregator github ghprb 
 
 # Switch back to Jenkins user
 USER jenkins
